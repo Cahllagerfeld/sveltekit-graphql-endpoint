@@ -1,0 +1,25 @@
+
+tasks:
+  - init: pnpm install
+    command: pnpm run dev
+    before: npm i -g pnpm
+
+ports:
+  - port: 3000
+    onOpen: open-browser
+
+vscode:
+  extensions:
+    - svelte.svelte-vscode
+    - Prisma.prisma
+    - bradlc.vscode-tailwindcss
+
+github:
+  prebuilds:
+    master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: true
+    addComment: false
+    addBadge: true
