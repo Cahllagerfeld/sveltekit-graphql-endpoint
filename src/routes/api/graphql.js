@@ -3,10 +3,10 @@ import { createServer } from '@graphql-yoga/common';
 const yogaApp = createServer({
 	schema: {
 		typeDefs: `
-			type Query {
-				hello: String
-			}
-		`,
+				type Query {
+					hello: String
+				}
+			`,
 		resolvers: {
 			Query: {
 				hello: () => 'SvelteKit - GraphQL Yoga'

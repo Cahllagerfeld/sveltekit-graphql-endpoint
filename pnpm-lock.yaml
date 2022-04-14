@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@graphql-yoga/common': ^2.2.1
+  '@prisma/client': ^3.12.0
   '@sveltejs/adapter-auto': next
   '@sveltejs/kit': 1.0.0-next.311
   autoprefixer: ^10.4.4
@@ -19,6 +20,7 @@ specifiers:
 
 dependencies:
   '@graphql-yoga/common': 2.2.1_graphql@16.3.0
+  '@prisma/client': 3.12.0
   graphql: 16.3.0
 
 devDependencies:
@@ -231,6 +233,23 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
+
+  /@prisma/client/3.12.0:
+    resolution: {integrity: sha512-4NEQjUcWja/NVBvfuDFscWSk1/rXg3+wj+TSkqXCb1tKlx/bsUE00rxsvOvGg7VZ6lw1JFpGkwjwmsOIc4zvQw==}
+    engines: {node: '>=12.6'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+    dependencies:
+      '@prisma/engines-version': 3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980
+    dev: false
+
+  /@prisma/engines-version/3.12.0-37.22b822189f46ef0dc5c5b503368d1bee01213980:
+    resolution: {integrity: sha512-o+jo8d7ZEiVpcpNWUDh3fj2uPQpBxl79XE9ih9nkogJbhw6P33274SHnqheedZ7PyvPIK/mvU8MLNYgetgXPYw==}
+    dev: false
 
   /@repeaterjs/repeater/3.0.4:
     resolution: {integrity: sha512-AW8PKd6iX3vAZ0vA43nOUOnbq/X5ihgU+mSXXqunMkeQADGiqw/PY0JNeYtD5sr0PAy51YPgAPbDoeapv9r8WA==}
