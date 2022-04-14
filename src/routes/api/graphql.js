@@ -1,19 +1,15 @@
 import { createServer } from '@graphql-yoga/common';
-import { schema } from '$lib/graphql/sdl/user.sdl';
-import * as services from '$lib/graphql/services/user.service';
 
 const yogaApp = createServer({
 	schema: {
-		typeDefs: schema,
+		typeDefs: `
+				type Query {
+					hello: String
+				}
+			`,
 		resolvers: {
 			Query: {
-				users: services.contacts,
-				user: services.contact
-			},
-			Mutation: {
-				createUser: services.createContact,
-				updateUser: services.updateContact,
-				deleteUser: services.deleteContact
+				hello: () => 'SvelteKit - GraphQL Yoga'
 			}
 		}
 	},
