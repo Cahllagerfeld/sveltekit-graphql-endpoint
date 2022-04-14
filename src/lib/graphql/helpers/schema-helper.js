@@ -16,14 +16,25 @@ export const getSchema = async (name) => {
  *
  * @param {*} model
  */
-export const generateQuerySDL = (model) => {
+export const generateType = (model) => {
 	return model.fields.map((field) => mapModelFieldToSDL(field));
 };
 
-export const generateInputSDL = (model) => {
+/**
+ *
+ * @param {*} model
+ * @returns
+ */
+export const generateCreate = (model) => {
 	return model.fields
 		.filter((field) => blacklist.indexOf(field.name) === -1 && field.kind !== 'object')
-		.map((field) => mapFieldToInput(field));
+		.map((field) => mapFieldToInput(field, true));
+};
+
+export const generateUpdate = (model) => {
+	return model.fields
+		.filter((field) => blacklist.indexOf(field.name) === -1 && field.kind !== 'object')
+		.map((field) => mapFieldToInput(field, false));
 };
 
 /**
@@ -35,10 +46,14 @@ const mapModelFieldToSDL = (field) => {
 	return `${field.name}: ${field.type}${field.isRequired ? '!' : ''}`;
 };
 
-const mapFieldToInput = (field) => {
-	return `${field.name}: ${field.isList ? '[' : ''}${field.type}${field.isList ? ']' : ''}${
-		field.isRequired | field.isList ? '!' : ''
-	}`;
+/**
+ *
+ * @param {*} field
+ * @param {Boolean} required
+ * @returns
+ */
+const mapFieldToInput = (field, required) => {
+	return `${field.name}: ${field.type}${required && field.isRequired ? '!' : ''}`;
 };
 
 /**

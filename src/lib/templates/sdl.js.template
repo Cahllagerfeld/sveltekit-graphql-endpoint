@@ -1,6 +1,6 @@
 export const schema = `
   type ${singularPascalName} {
-    ${query}
+    ${type}
   }
   type Query {
     ${pluralCamelName}: [${singularPascalName}!]!
