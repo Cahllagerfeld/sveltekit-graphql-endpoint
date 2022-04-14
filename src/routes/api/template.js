@@ -1,4 +1,4 @@
-import lodash from 'lodash/string';
+import lodash from 'lodash/string.js';
 import fs from 'fs';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
