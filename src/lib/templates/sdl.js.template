@@ -3,8 +3,8 @@ export const schema = `
     ${query}
   }
   type Query {
-    ${pluralCamelName}: [${singularPascalName}!]! @requireAuth<% if (crud) { %>
-    ${singularCamelName}(id: ${idType}!): ${singularPascalName} @requireAuth<% } %>
+    ${pluralCamelName}: [${singularPascalName}!]!
+    ${singularCamelName}(id: ${idType}!): ${singularPascalName}
   }
 
   input Create${singularPascalName}Input {
@@ -16,8 +16,8 @@ export const schema = `
   }
   
   type Mutation {
-    create${singularPascalName}(input: Create${singularPascalName}Input!): ${singularPascalName}! @requireAuth
-    update${singularPascalName}(id: ${idType}!, input: Update${singularPascalName}Input!): ${singularPascalName}! @requireAuth
-    delete${singularPascalName}(id: ${idType}!): ${singularPascalName}! @requireAuth
+    create${singularPascalName}(input: Create${singularPascalName}Input!): ${singularPascalName}! 
+    update${singularPascalName}(id: ${idType}!, input: Update${singularPascalName}Input!): ${singularPascalName}! 
+    delete${singularPascalName}(id: ${idType}!): ${singularPascalName}!
   }
 `

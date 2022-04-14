@@ -1,15 +1,15 @@
 import lodash from 'lodash/string.js';
 import fs from 'fs';
-import { getSchema, generateQuerySDL } from '$lib/graphql/helpers/schema-helper';
+import { getSchema, generateQuerySDL, generateInputSDL } from '$lib/graphql/helpers/schema-helper';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get() {
 	const template = lodash.template(readSDLTemplate().toString(), {});
 	const schema = await getSchema('user');
-	const querySDL = generateQuerySDL(schema).join("\n\t");
+	const query = generateQuerySDL(schema).join('\n\t');
+	const createInput = generateInputSDL(schema).join('\n\t');
 	return {
-		status: 200,
-		body: querySDL
+		status: 200
 	};
 }
 
