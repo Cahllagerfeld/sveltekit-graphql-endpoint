@@ -12,6 +12,8 @@ specifiers:
   eslint-plugin-svelte3: ^3.2.1
   graphql: ^16.3.0
   lodash: ^4.17.21
+  pascalcase: ^2.0.0
+  pluralize: ^8.0.0
   postcss: ^8.4.12
   postcss-load-config: ^3.1.4
   prettier: ^2.5.1
@@ -26,6 +28,8 @@ dependencies:
   '@prisma/sdk': 3.12.0
   graphql: 16.3.0
   lodash: 4.17.21
+  pascalcase: 2.0.0
+  pluralize: 8.0.0
 
 devDependencies:
   '@sveltejs/adapter-auto': 1.0.0-next.34
@@ -747,6 +751,11 @@ packages:
     resolution: {integrity: sha512-QOSvevhslijgYwRx6Rv7zKdMF8lbRmx+uQGx2+vDc+KI/eBnsy9kit5aj23AgGu3pa4t9AgwbnXWqS+iOY+2aA==}
     engines: {node: '>= 6'}
     dev: true
+
+  /camelcase/6.3.0:
+    resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
+    engines: {node: '>=10'}
+    dev: false
 
   /caniuse-lite/1.0.30001331:
     resolution: {integrity: sha512-Y1xk6paHpUXKP/P6YjQv1xqyTbgAP05ycHBcRdQjTcyXlWol868sJJPlmk5ylOekw2BrucWes5jk+LvVd7WZ5Q==}
@@ -2147,6 +2156,13 @@ packages:
       lines-and-columns: 1.2.4
     dev: false
 
+  /pascalcase/2.0.0:
+    resolution: {integrity: sha512-DHpENy5Qm/FaX+x3iBLoMLG/XHNCTgL+yErm1TwuVaj6u4fiOSkYkf60vGtITk7hrKHOO4uCl9vRrD4hqjNKjg==}
+    engines: {node: '>=14'}
+    dependencies:
+      camelcase: 6.3.0
+    dev: false
+
   /path-exists/4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
@@ -2181,6 +2197,11 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: false
+
+  /pluralize/8.0.0:
+    resolution: {integrity: sha512-Nc3IT5yHzflTfbjgqWcCPpo7DaKy4FnpB0l/zCAW0Tc7jxAiuqSxHasntB3D7887LSrA93kDJ9IXovxJYxyLCA==}
+    engines: {node: '>=4'}
     dev: false
 
   /postcss-js/4.0.0_postcss@8.4.12:

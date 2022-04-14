@@ -56,13 +56,6 @@ const mapFieldToInput = (field, required) => {
 	return `${field.name}: ${field.type}${required && field.isRequired ? '!' : ''}`;
 };
 
-/**
- * Generates a InputSDL for GraphQL
- * @param {*} field
- */
-
-/**
- * Generates a UpdateInput for GraphQL
- * @param {*} model
- */
-const generateUpdateInputSDL = (model) => {};
+export const getIDType = (model) => {
+	return model.fields.find((field) => field.name === 'id').type;
+};
