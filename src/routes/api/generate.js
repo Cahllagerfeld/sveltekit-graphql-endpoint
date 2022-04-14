@@ -30,18 +30,33 @@ export async function get() {
 		idType
 	});
 
-	const dest = `${process.cwd()}/src/lib/graphql/sdl/${dictionary.singularKebabName}.js`;
+	const serviceTemplate = lodash.template(readServiceTemplate().toString(), {});
+	const service = serviceTemplate({
+		...dictionary
+	});
 
-	write(dest, generatedTemplate);
+	const sdlDest = `${process.cwd()}/src/lib/graphql/sdl/${dictionary.singularKebabName}.sdl.js`;
+	const serviceDest = `${process.cwd()}/src/lib/graphql/services/${
+		dictionary.singularKebabName
+	}.service.js`;
+
+	write(sdlDest, generatedTemplate);
+	write(serviceDest, service);
 
 	return {
 		status: 200,
-		body: generatedTemplate
+		body: { success: true }
 	};
 }
 
 const readSDLTemplate = () => {
 	return fs.readFileSync(`${process.cwd()}/src/lib/templates/sdl.js.template`, {
+		encoding: 'utf8'
+	});
+};
+
+const readServiceTemplate = () => {
+	return fs.readFileSync(`${process.cwd()}/src/lib/templates/service.js.template`, {
 		encoding: 'utf8'
 	});
 };
