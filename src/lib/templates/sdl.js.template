@@ -1,0 +1,23 @@
+export const schema = `
+  type ${singularPascalName} {
+    ${type}
+  }
+  type Query {
+    ${pluralCamelName}: [${singularPascalName}!]!
+    ${singularCamelName}(id: ${idType}!): ${singularPascalName}
+  }
+
+  input Create${singularPascalName}Input {
+    ${createInput}
+  }
+
+  input Update${singularPascalName}Input {
+    ${updateInput}
+  }
+  
+  type Mutation {
+    create${singularPascalName}(input: Create${singularPascalName}Input!): ${singularPascalName}! 
+    update${singularPascalName}(id: ${idType}!, input: Update${singularPascalName}Input!): ${singularPascalName}! 
+    delete${singularPascalName}(id: ${idType}!): ${singularPascalName}!
+  }
+`
