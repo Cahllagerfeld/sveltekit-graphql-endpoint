@@ -4,7 +4,7 @@ const sdls = Object.entries(import.meta.globEager('/src/lib/**/*.sdl.js')).map((
 	return { ...sdl };
 });
 
-const services = Object.entries(import.meta.globEager('/src/lib/**/*.sdl.js')).map(
+const services = Object.entries(import.meta.globEager('/src/lib/**/*.service.js')).map(
 	([_, service]) => {
 		return { ...service };
 	}
