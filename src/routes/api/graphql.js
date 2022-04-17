@@ -31,7 +31,30 @@ function createSchema(sdls, services) {
 	return schema;
 }
 
+/**
+ *
+ * @param {import("graphql").GraphQLSchema} schema
+ * @param {*} services
+ * @param {*} resolvers
+ */
 function createResolversFromServices(schema, services, resolvers) {
 	const merged = merge({}, ...Object.keys(services).map((serviceName) => services[serviceName]));
-	console.log({ merged });
+
+	const typesWithFields = Object.keys(schema.getTypeMap())
+		.filter((name) => !name.startsWith('_'))
+		.filter((name) => name !== 'undefined')
+		.map((name) => {
+			return schema.getType(name);
+		})
+		.filter((type) => type !== undefined && type !== null);
+
+	const mappedResolvers = typesWithFields.reduce((acc, type) => {
+		let servicesForType = merged;
+		if (!['Query', 'Mutation'].includes(type.name)) {
+			servicesForType = merged?.[type.name];
+		}
+		return {
+			...acc
+		};
+	}, {});
 }
