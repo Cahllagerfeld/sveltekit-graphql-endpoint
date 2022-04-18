@@ -28,10 +28,13 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@graphql-tools/merge": "^8.2.9",
+		"@graphql-tools/schema": "^8.3.9",
 		"@graphql-yoga/common": "^2.2.1",
 		"@prisma/client": "^3.12.0",
 		"@prisma/sdk": "^3.12.0",
 		"graphql": "^16.3.0",
+		"graphql-tag": "^2.12.6",
 		"lodash": "^4.17.21",
 		"pascalcase": "^2.0.0",
 		"pluralize": "^8.0.0"

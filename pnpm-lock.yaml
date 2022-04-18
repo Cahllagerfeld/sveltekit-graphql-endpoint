@@ -1,6 +1,8 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@graphql-tools/merge': ^8.2.9
+  '@graphql-tools/schema': ^8.3.9
   '@graphql-yoga/common': ^2.2.1
   '@prisma/client': ^3.12.0
   '@prisma/sdk': ^3.12.0
@@ -11,6 +13,7 @@ specifiers:
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^3.2.1
   graphql: ^16.3.0
+  graphql-tag: ^2.12.6
   lodash: ^4.17.21
   pascalcase: ^2.0.0
   pluralize: ^8.0.0
@@ -23,10 +26,13 @@ specifiers:
   tailwindcss: ^3.0.23
 
 dependencies:
+  '@graphql-tools/merge': 8.2.9_graphql@16.3.0
+  '@graphql-tools/schema': 8.3.9_graphql@16.3.0
   '@graphql-yoga/common': 2.2.1_graphql@16.3.0
   '@prisma/client': 3.12.0
   '@prisma/sdk': 3.12.0
   graphql: 16.3.0
+  graphql-tag: 2.12.6_graphql@16.3.0
   lodash: 4.17.21
   pascalcase: 2.0.0
   pluralize: 8.0.0
@@ -131,23 +137,23 @@ packages:
       - supports-color
     dev: true
 
-  /@graphql-tools/merge/8.2.8_graphql@16.3.0:
-    resolution: {integrity: sha512-e4kpzgEIlA0sC0NjJlMwUL73Iz/HoP2OgAUReDDsupvWCqW3PMxjNoviS8xmcklVnv1w8Vmr8U2tao+x40ypLA==}
+  /@graphql-tools/merge/8.2.9_graphql@16.3.0:
+    resolution: {integrity: sha512-mHRrqMc1NTL6MALBQK1DmAzSxJIKoaCaW7ZCk5bRGzVj/MNQz3OsqlDb/+t9/ONT0V+WI/uxBFsrLMwa4p6L7A==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/utils': 8.6.7_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.8_graphql@16.3.0
       graphql: 16.3.0
       tslib: 2.3.1
     dev: false
 
-  /@graphql-tools/schema/8.3.8_graphql@16.3.0:
-    resolution: {integrity: sha512-Bba60ali4fLOKJz/Kk39RcBrDUBtu0Wy7pjpIOmFIKQKwUBNNB0eAmfpvrjnFhRAVdO2kOkPpc8DQY+SCG+lWw==}
+  /@graphql-tools/schema/8.3.9_graphql@16.3.0:
+    resolution: {integrity: sha512-9YFCzn0sYAGTWhZrVYY/neK5cie3s0dNm7Qq38tkhOh2ME5BtHW/8ZIq+UrLGKsBYwa+Qjb/UojGWUm2yG/z6Q==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-tools/merge': 8.2.8_graphql@16.3.0
-      '@graphql-tools/utils': 8.6.7_graphql@16.3.0
+      '@graphql-tools/merge': 8.2.9_graphql@16.3.0
+      '@graphql-tools/utils': 8.6.8_graphql@16.3.0
       graphql: 16.3.0
       tslib: 2.3.1
       value-or-promise: 1.0.11
@@ -155,6 +161,15 @@ packages:
 
   /@graphql-tools/utils/8.6.7_graphql@16.3.0:
     resolution: {integrity: sha512-Qi3EN95Rt3hb8CyDKpPKFWOPrnc00P18cpVTXEgtKxetSP39beJBeEEtLB0R53eP/6IolsyTZOTgkET1EaERaw==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.3.0
+      tslib: 2.3.1
+    dev: false
+
+  /@graphql-tools/utils/8.6.8_graphql@16.3.0:
+    resolution: {integrity: sha512-EdUUeKi/wp/UvuknyINpQ/uXDqTM3qxPPPDIq5RpfW0zQOeCvbZcx8xHoMox0TYKvKtg3zoB7aprUtoW+iZLxw==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
@@ -179,7 +194,7 @@ packages:
       '@envelop/disable-introspection': 3.3.1_83cdbd13f4f19c73eb68b6aef3fe7dc9
       '@envelop/parser-cache': 4.3.1_83cdbd13f4f19c73eb68b6aef3fe7dc9
       '@envelop/validation-cache': 4.3.1_83cdbd13f4f19c73eb68b6aef3fe7dc9
-      '@graphql-tools/schema': 8.3.8_graphql@16.3.0
+      '@graphql-tools/schema': 8.3.9_graphql@16.3.0
       '@graphql-tools/utils': 8.6.7_graphql@16.3.0
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.3.0
       '@graphql-yoga/subscription': 2.0.0
@@ -1610,6 +1625,16 @@ packages:
 
   /graceful-fs/4.2.10:
     resolution: {integrity: sha512-9ByhssR2fPVsNZj478qUUbKfmL0+t5BDVyjShtyZZLiK7ZDAArFFfopyOTj0M05wE2tJPisA4iTnnXl2YoPvOA==}
+
+  /graphql-tag/2.12.6_graphql@16.3.0:
+    resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      graphql: ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.3.0
+      tslib: 2.3.1
+    dev: false
 
   /graphql/16.3.0:
     resolution: {integrity: sha512-xm+ANmA16BzCT5pLjuXySbQVFwH3oJctUVdy81w1sV0vBU0KgDdBGtxQOUd5zqOBk/JayAFeG8Dlmeq74rjm/A==}
